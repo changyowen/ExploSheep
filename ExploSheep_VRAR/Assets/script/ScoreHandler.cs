@@ -7,11 +7,6 @@ public class ScoreHandler : MonoBehaviour
 {
     public Text ScoreText;
     public int score = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -22,10 +17,5 @@ public class ScoreHandler : MonoBehaviour
     public void AddScore()
     {
         score += 10;
-    }
-
-    public void DeductScore()
-    {
-        score -= 10;
     }
 }

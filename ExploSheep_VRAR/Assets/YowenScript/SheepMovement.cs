@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SheepMovement : MonoBehaviour
 {
+    public ScoreHandler script;
+    public HPScript loseHealth;
     //access
+    public GameObject healthManager;
+    public GameObject score;
     public GameObject player_gameObj;
     public Transform player_transform;
     public Transform groundCheck;
@@ -25,6 +29,10 @@ public class SheepMovement : MonoBehaviour
 
     void Start()
     {
+        healthManager = GameObject.Find("HP");
+        loseHealth = healthManager.GetComponent<HPScript>();
+        score = GameObject.Find("ScoreText");
+        script = score.GetComponent<ScoreHandler>();
         player_gameObj = GameObject.Find("Player");
         player_transform = player_gameObj.GetComponent<Transform>();
     }
@@ -76,11 +84,11 @@ public class SheepMovement : MonoBehaviour
     {
         if(correctAnswer)
         {
-            //go up (coroutine)
+            script.AddScore();
         }
         else
         {
-            //destroy {coroutine)
+            loseHealth.DeductHP();   
         }
     }
 }

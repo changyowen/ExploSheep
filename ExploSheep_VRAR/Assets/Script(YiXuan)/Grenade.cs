@@ -5,14 +5,19 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
     public Collider grenadeCollider;
+
+    public AudioSource boom;
     void Start()
     {
+        boom = GameObject.Find("Grenade").GetComponent<AudioSource>();
+
         StartCoroutine(ExplodeTime());
     }
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "InfectedSheep")
         {
+            other.transform.GetChild(2).transform.GetChild(0).GetComponent<AnsGeneration>().ChangeAnswer();
             Sniper_Script.isInfectedSheep = false;
             Sniper_Script.isHealthySheep = true;
             Debug.Log("sheep cleansed");
@@ -23,7 +28,8 @@ public class Grenade : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         grenadeCollider.enabled = true;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(0.5f);
+        boom.Play();
         Destroy(gameObject);
     }
 }

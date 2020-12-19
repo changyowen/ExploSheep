@@ -14,9 +14,14 @@ public class WaveManager : MonoBehaviour
     private bool startGame = false;
     private int waveCount = 0;
 
+    public AudioSource countDown;
+    public AudioSource start;
+
     // Start is called before the first frame update
     void Start()
     {
+        countDown = GameObject.Find("321").GetComponent<AudioSource>();
+        start = GameObject.Find("Start").GetComponent<AudioSource>();
         StartCoroutine(StartGame());
     }
 
@@ -57,12 +62,16 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         opening_UI.transform.gameObject.SetActive(true);
         opening_UI.sprite = opening_sprites[2];
+        countDown.Play();
         yield return new WaitForSeconds(1f);
         opening_UI.sprite = opening_sprites[1];
+        countDown.Play();
         yield return new WaitForSeconds(1f);
         opening_UI.sprite = opening_sprites[0];
+        countDown.Play();
         yield return new WaitForSeconds(1f);
         opening_UI.transform.gameObject.SetActive(false);
+        start.Play();
         StartWave();
     }
 
