@@ -6,12 +6,10 @@ public class Sheep : MonoBehaviour
     public Transform grenade;
     public Transform enemyPos;
     public ScoreHandler script;
-    public GameObject score;
 
     private void Start()
     {
-        score = GameObject.Find("ScoreText");
-        script = score.GetComponent<ScoreHandler>();
+        script = GameObject.Find("ScoreText").GetComponent<ScoreHandler>();
         enemyPos = this.GetComponent<Transform>();
     }
     public void TakeDamge(float amount)

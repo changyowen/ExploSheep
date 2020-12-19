@@ -29,10 +29,8 @@ public class SheepMovement : MonoBehaviour
 
     void Start()
     {
-        healthManager = GameObject.Find("HP");
-        loseHealth = healthManager.GetComponent<HPScript>();
-        score = GameObject.Find("ScoreText");
-        script = score.GetComponent<ScoreHandler>();
+        script = GameObject.Find("ScoreText").GetComponent<ScoreHandler>();
+        loseHealth = GameObject.Find("HP").GetComponent<HPScript>();
         player_gameObj = GameObject.Find("Player");
         player_transform = player_gameObj.GetComponent<Transform>();
     }
