@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7281495809293761515}
   - component: {fileID: 5273291589965680560}
   - component: {fileID: 208144968939175620}
-  - component: {fileID: 1314461599704999084}
+  - component: {fileID: 1673496099052924230}
   m_Layer: 0
   m_Name: Grenade
   m_TagString: Untagged
@@ -108,7 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcfdbcd618e229f419862da0adc02f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheep: {fileID: 6899111330678693583, guid: 72b2c9c837359334ba97025c16bba73a, type: 3}
   grenadeCollider: {fileID: 7281495809293761515}
 --- !u!54 &208144968939175620
 Rigidbody:
@@ -126,8 +125,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1314461599704999084
-SphereCollider:
+--- !u!65 &1673496099052924230
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -137,5 +136,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}

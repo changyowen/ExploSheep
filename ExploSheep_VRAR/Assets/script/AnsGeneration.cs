@@ -15,7 +15,7 @@ public class AnsGeneration : MonoBehaviour
     {
         answer = QuestionGenerator.instance.result;
         System.Random rand = new System.Random();
-        finalAns = answer + rand.Next(-1,2);
+        finalAns = answer + rand.Next(-2,1);
         ansText.text = finalAns.ToString();
     }
 

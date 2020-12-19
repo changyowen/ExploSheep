@@ -5,10 +5,13 @@ public class Sheep : MonoBehaviour
     public float health = 10f;
     public Transform grenade;
     public Transform enemyPos;
-
+    public ScoreHandler script;
+    public GameObject score;
 
     private void Start()
     {
+        score = GameObject.Find("ScoreText");
+        script = score.GetComponent<ScoreHandler>();
         enemyPos = this.GetComponent<Transform>();
     }
     public void TakeDamge(float amount)
@@ -41,6 +44,7 @@ public class Sheep : MonoBehaviour
 
     void InfectedSheepDie()
     {
+        script.AddScore();
         if(Sniper_Script.spawnNadeChance == 0)
         {
             SpawnNade();
