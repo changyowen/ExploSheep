@@ -204,6 +204,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1e82a5c27e604ca9435d0d3211f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  script: {fileID: 0}
+  loseHealth: {fileID: 0}
+  player_gameObj: {fileID: 0}
   player_transform: {fileID: 0}
   groundCheck: {fileID: 4924406}
   groundDistance: 0.4
@@ -214,6 +217,7 @@ MonoBehaviour:
   distanceToStop: 3
   speed: 2.5
   gravity: -9.81
+  flyingTime: 6
 --- !u!65 &7630257605248887593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -242,6 +246,7 @@ MonoBehaviour:
   health: 10
   grenade: {fileID: 940612500514844507, guid: 05b5f3e5db6a80f488fce445d3a5d1e4, type: 3}
   enemyPos: {fileID: 0}
+  script: {fileID: 0}
 --- !u!1 &5756885182980014980
 GameObject:
   m_ObjectHideFlags: 0

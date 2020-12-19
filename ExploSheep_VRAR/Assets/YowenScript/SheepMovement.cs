@@ -18,6 +18,7 @@ public class SheepMovement : MonoBehaviour
     public float distanceToStop;
     public float speed;
     public float gravity = -9.81f;
+    public float flyingTime = 2f;
 
     //system use
     Vector3 velocity;
@@ -81,10 +82,35 @@ public class SheepMovement : MonoBehaviour
         if(correctAnswer)
         {
             script.AddScore();
+            StartCoroutine(Flying(flyingTime));
         }
         else
         {
-            loseHealth.DeductHP();   
+            loseHealth.DeductHP();
+            StartCoroutine(Explode());
         }
+    }
+
+    IEnumerator Flying(float time)
+    {
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
+        //sound effect
+        float elapsedTime = 0;
+        Vector3 destination = new Vector3(transform.position.x, transform.position.y + 6, transform.position.z);
+        while (elapsedTime <= time)
+        {
+            transform.position = Vector3.Lerp(transform.position, destination, (elapsedTime / time));
+            elapsedTime += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        Destroy(this.gameObject);
+    }
+
+    IEnumerator Explode()
+    {
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
+        yield return new WaitForSeconds(1f);
+        //sound and vfx
+        Destroy(this.gameObject);
     }
 }
