@@ -7,6 +7,8 @@ public class WaveManager : MonoBehaviour
 {
     //access
     public GameObject[] UI_accessible;
+    public Sprite[] opening_sprites;
+    public Image opening_UI;
 
     private float Timer = 60f;
     private bool startGame = false;
@@ -51,15 +53,21 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        yield return new WaitForSeconds(3f);
-
+        opening_UI.sprite = null;
+        yield return new WaitForSeconds(1f);
+        opening_UI.sprite = opening_sprites[2];
+        yield return new WaitForSeconds(1f);
+        opening_UI.sprite = opening_sprites[1];
+        yield return new WaitForSeconds(1f);
+        opening_UI.sprite = opening_sprites[0];
+        yield return new WaitForSeconds(1f);
+        opening_UI.transform.gameObject.SetActive(false);
         StartWave();
     }
 
     IEnumerator EndGame()
     {
         yield return new WaitForSeconds(1f);
-        //end game;
     }
 
     void StartWave()
