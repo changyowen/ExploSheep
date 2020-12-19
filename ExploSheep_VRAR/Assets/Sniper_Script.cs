@@ -13,7 +13,8 @@ public class Sniper_Script : MonoBehaviour
     Sheep sheep;
 
     RaycastHit hits;
-
+    public int maxChance;
+    public static int spawnNadeChance;
     public static bool isInfectedSheep;
     public static bool isHealthySheep;
 
@@ -84,6 +85,7 @@ public class Sniper_Script : MonoBehaviour
             Debug.Log("Infected Sheep :(");
             sniperFire.Play();
             sniperMuzzleFlash.Play();
+            spawnNadeChance = Random.Range(0, maxChance);
             sheep.TakeDamge(damage);
         }
         

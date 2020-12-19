@@ -12,9 +12,10 @@ public class Grenade : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "sheep")
+        if(other.tag == "InfectedSheep")
         {
-            SheepProfile.sheepStat = true;
+            Sniper_Script.isInfectedSheep = false;
+            Sniper_Script.isHealthySheep = true;
             Debug.Log("sheep cleansed");
         }
     }
@@ -23,5 +24,7 @@ public class Grenade : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         grenadeCollider.enabled = true;
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
     }
 }
