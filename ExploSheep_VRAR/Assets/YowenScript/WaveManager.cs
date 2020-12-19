@@ -53,8 +53,9 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        opening_UI.sprite = null;
+        opening_UI.transform.gameObject.SetActive(false);
         yield return new WaitForSeconds(1f);
+        opening_UI.transform.gameObject.SetActive(true);
         opening_UI.sprite = opening_sprites[2];
         yield return new WaitForSeconds(1f);
         opening_UI.sprite = opening_sprites[1];
