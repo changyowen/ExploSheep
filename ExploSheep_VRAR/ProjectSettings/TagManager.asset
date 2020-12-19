@@ -9,6 +9,8 @@ TagManager:
   - Create
   - Destroy
   - sheep
+  - Sheep
+  - InfectedSheep
   layers:
   - Default
   - TransparentFX

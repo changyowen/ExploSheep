@@ -5,6 +5,7 @@ using UnityEngine;
 public class Grenade : MonoBehaviour
 {
     public Collider grenadeCollider;
+    public ParticleSystem particle;
 
     public AudioSource boom;
     void Start()
@@ -28,8 +29,9 @@ public class Grenade : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         grenadeCollider.enabled = true;
-        yield return new WaitForSeconds(0.5f);
+        particle.Play();
         boom.Play();
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }
