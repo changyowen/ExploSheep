@@ -10,6 +10,7 @@ public class WaveManager : MonoBehaviour
     public Sprite[] opening_sprites;
     public Image opening_UI;
     public GameObject gameOverPanel;
+    public HPScript hPScript;
 
     private float Timer = 60f;
     private bool startGame = false;
@@ -50,7 +51,7 @@ public class WaveManager : MonoBehaviour
             }
         }
 
-        if(waveCount >= 3)
+        if(waveCount >= 3 || hPScript.HP <= 0)
         {
             startGame = false;
             EndGame();
