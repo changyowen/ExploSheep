@@ -13,6 +13,8 @@ public class SheepMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
     public AnsGeneration ansGeneration;
+    public AudioSource correctSound;
+    public AudioSource explodeSound;
 
     //editable data
     public float distanceToStop;
@@ -32,11 +34,13 @@ public class SheepMovement : MonoBehaviour
         loseHealth = GameObject.Find("HP").GetComponent<HPScript>();
         player_gameObj = GameObject.Find("Player");
         player_transform = player_gameObj.GetComponent<Transform>();
+        correctSound = GameObject.Find("correct").GetComponent<AudioSource>();
+        explodeSound = GameObject.Find("boom").GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
     {
-        if(reachTarget == false)
+        if(reachTarget == false && WaveManager.instance.startGame == true)
         {
             isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
             if (isGrounded && velocity.y < 0)
@@ -86,7 +90,6 @@ public class SheepMovement : MonoBehaviour
         }
         else
         {
-            loseHealth.DeductHP();
             StartCoroutine(Explode());
         }
     }
@@ -94,12 +97,13 @@ public class SheepMovement : MonoBehaviour
     IEnumerator Flying(float time)
     {
         transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
-        //sound effect
+        correctSound.Play();
         float elapsedTime = 0;
         Vector3 destination = new Vector3(transform.position.x, transform.position.y + 6, transform.position.z);
         while (elapsedTime <= time)
         {
-            transform.position = Vector3.Lerp(transform.position, destination, (elapsedTime / time));
+            float step = time * Time.deltaTime; // calculate distance to move
+            transform.position = Vector3.MoveTowards(transform.position, destination, step);
             elapsedTime += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
@@ -108,9 +112,13 @@ public class SheepMovement : MonoBehaviour
 
     IEnumerator Explode()
     {
-        transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
+        transform.GetChild(0).GetComponent<Animator>().SetTrigger("stun");
+        transform.GetChild(3).gameObject.SetActive(true);
         yield return new WaitForSeconds(1f);
-        //sound and vfx
+        transform.GetChild(0).gameObject.SetActive(false);
+        explodeSound.Play();
+        loseHealth.DeductHP();
+        yield return new WaitForSeconds(1f);
         Destroy(this.gameObject);
     }
 }

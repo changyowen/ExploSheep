@@ -5,6 +5,20 @@ using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour
 {
+    #region Singleton
+    public static WaveManager instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of GameManager found!");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
     //access
     public GameObject[] UI_accessible;
     public Sprite[] opening_sprites;
@@ -13,7 +27,7 @@ public class WaveManager : MonoBehaviour
     public HPScript hPScript;
 
     private float Timer = 60f;
-    private bool startGame = false;
+    public bool startGame = false;
     private int waveCount = 0;
 
     public AudioSource countDown;
