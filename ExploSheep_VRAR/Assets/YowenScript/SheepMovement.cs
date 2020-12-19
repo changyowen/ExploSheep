@@ -5,6 +5,7 @@ using UnityEngine;
 public class SheepMovement : MonoBehaviour
 {
     //access
+    public GameObject player_gameObj;
     public Transform player_transform;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
@@ -24,7 +25,8 @@ public class SheepMovement : MonoBehaviour
 
     void Start()
     {
-
+        player_gameObj = GameObject.Find("Player");
+        player_transform = player_gameObj.GetComponent<Transform>();
     }
 
     void FixedUpdate()
@@ -45,6 +47,14 @@ public class SheepMovement : MonoBehaviour
     void Update()
     {
         correctAnswer = ansGeneration.IsThisCorrect();
+        if (correctAnswer)
+        {
+            this.transform.tag = "Sheep";
+        }
+        else
+        {
+            this.transform.tag = "InfectedSheep";
+        }
     }
 
     void FollowTargetWithRotation(Transform target, float distanceToStop, float speed)

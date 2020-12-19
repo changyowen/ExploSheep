@@ -19,7 +19,10 @@ public class HPScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(HP == 0)
+        {
+            Debug.Log("Game Over");
+        }
     }
 
     public void DeductHP()
@@ -27,7 +30,7 @@ public class HPScript : MonoBehaviour
         HP--;
         if (HP < 3)
         {
-            for(int i = HP; i < 4; i++)
+            for(int i = HP; i < 3; i++)
             {
                 HPImage[i].SetActive(false);
             }

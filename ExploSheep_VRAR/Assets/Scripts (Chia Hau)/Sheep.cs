@@ -2,6 +2,7 @@
 
 public class Sheep : MonoBehaviour
 {
+    HPScript hp;
     public float health = 10f;
     public Transform grenade;
     public Transform enemyPos;
@@ -33,7 +34,7 @@ public class Sheep : MonoBehaviour
 
     void HealthySheepDie()
     {
-        Player_Info.playerHealth--;
+        hp.DeductHP();
         Debug.Log("Player Lives: " + Player_Info.playerHealth);
         Destroy(gameObject);
         Sniper_Script.isInfectedSheep = false;

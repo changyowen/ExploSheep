@@ -15,7 +15,7 @@ public class AnsGeneration : MonoBehaviour
     {
         answer = QuestionGenerator.instance.result;
         System.Random rand = new System.Random();
-        finalAns = answer + rand.Next(-2, 4);
+        finalAns = answer + rand.Next(-1,2);
         ansText.text = finalAns.ToString();
     }
 
@@ -29,5 +29,11 @@ public class AnsGeneration : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void ChangeAnswer()
+    {
+        finalAns = answer;
+        ansText.text = finalAns.ToString();
     }
 }

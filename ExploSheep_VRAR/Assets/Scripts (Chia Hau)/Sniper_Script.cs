@@ -80,7 +80,7 @@ public class Sniper_Script : MonoBehaviour
     IEnumerator TwoSecondsCoroutine()
     {
         yield return new WaitForSeconds(2);
-        if (isInfectedSheep && !isHealthySheep && CameraRaycast.loader.fillAmount == 1)
+        if (isInfectedSheep && !isHealthySheep /*&& CameraRaycast.loader.fillAmount == 1*/)
         {
             Debug.Log("Infected Sheep :(");
             sniperFire.Play();
@@ -89,7 +89,7 @@ public class Sniper_Script : MonoBehaviour
             sheep.TakeDamge(damage);
         }
         
-        if (isHealthySheep && !isInfectedSheep && CameraRaycast.loader.fillAmount == 1)
+        if (isHealthySheep && !isInfectedSheep /*&& CameraRaycast.loader.fillAmount == 1*/)
         {
             Debug.Log("Healthy Sheep :)");
             sniperFire.Play();
