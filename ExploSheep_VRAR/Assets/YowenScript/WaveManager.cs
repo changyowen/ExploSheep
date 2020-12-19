@@ -9,6 +9,7 @@ public class WaveManager : MonoBehaviour
     public GameObject[] UI_accessible;
     public Sprite[] opening_sprites;
     public Image opening_UI;
+    public GameObject gameOverPanel;
 
     private float Timer = 60f;
     private bool startGame = false;
@@ -52,7 +53,7 @@ public class WaveManager : MonoBehaviour
         if(waveCount >= 3)
         {
             startGame = false;
-            StartCoroutine(EndGame());
+            EndGame();
         }
     }
 
@@ -75,9 +76,11 @@ public class WaveManager : MonoBehaviour
         StartWave();
     }
 
-    IEnumerator EndGame()
+    void EndGame()
     {
-        yield return new WaitForSeconds(1f);
+        SpawnSheepManager.instance.StartSpawning = false;
+        Animator anim = gameOverPanel.GetComponent<Animator>();
+        anim.SetBool("Showing", true);
     }
 
     void StartWave()
