@@ -5,8 +5,7 @@ using UnityEngine;
 public class SheepMovement : MonoBehaviour
 {
     //access
-    public GameObject player_gameObj;
-    Transform player_transform;
+    public Transform player_transform;
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
@@ -24,7 +23,7 @@ public class SheepMovement : MonoBehaviour
 
     void Start()
     {
-        player_transform = player_gameObj.GetComponent<Transform>();
+
     }
 
     void FixedUpdate()
