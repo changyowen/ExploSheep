@@ -6,6 +6,20 @@ using UnityEngine.UI;
 
 public class QuestionGenerator : MonoBehaviour
 {
+    #region Singleton
+    public static QuestionGenerator instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of GameManager found!");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
     int randomNum1, randomNum2;
     int randomSymbol;
     public int result;
@@ -16,7 +30,7 @@ public class QuestionGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartQuestionGen();
+
     }
 
     // Update is called once per frame

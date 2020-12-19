@@ -9,6 +9,7 @@ public class SheepMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
+    public AnsGeneration ansGeneration;
 
     //editable data
     public float distanceToStop;
@@ -39,6 +40,11 @@ public class SheepMovement : MonoBehaviour
             GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
             FollowTargetWithRotation(player_transform, distanceToStop, speed);
         }
+    }
+
+    void Update()
+    {
+        correctAnswer = ansGeneration.IsThisCorrect();
     }
 
     void FollowTargetWithRotation(Transform target, float distanceToStop, float speed)

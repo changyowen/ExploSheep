@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class SpawnSheepManager : MonoBehaviour
 {
+    #region Singleton
+    public static SpawnSheepManager instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of GameManager found!");
+            return;
+        }
+        instance = this;
+    }
+    #endregion
+
     public GameObject sheep_gameObj;
 
     //accessable data
@@ -36,6 +50,10 @@ public class SpawnSheepManager : MonoBehaviour
                 Timer = 0;
             }
         }
+        else
+        {
+            Timer = 0;
+        }
     }
 
     void SpawnSheep()
@@ -50,6 +68,7 @@ public class SpawnSheepManager : MonoBehaviour
         Vector3 SheepSpawnPoint = new Vector3(spawnPointX, 6f, spawnPointZ);
 
         GameObject Sheep = Instantiate(sheep_gameObj, SheepSpawnPoint, Quaternion.identity) as GameObject;
+        Sheep.name = "Sheep";
         SheepMovement sheepMovement = Sheep.GetComponent<SheepMovement>();
         sheepMovement.player_transform = spawnCenter;
     }

@@ -6,20 +6,28 @@ using UnityEngine.UI;
 
 public class AnsGeneration : MonoBehaviour
 {
-    public QuestionGenerator Questions;
     int answer;
     int finalAns;
-    Text ansText;
+    public TextMesh ansText;
     
     // Start is called before the first frame update
     void Start()
     {
-        ansText = this.gameObject.GetComponentInChildren<Text>();
-        answer = Questions.result;
+        answer = QuestionGenerator.instance.result;
         System.Random rand = new System.Random();
-        finalAns = answer + rand.Next(-5, 6);
+        finalAns = answer + rand.Next(-2, 4);
         ansText.text = finalAns.ToString();
     }
 
-
+    public bool IsThisCorrect()
+    {
+        if(finalAns == answer)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
