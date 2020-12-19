@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Grenade : MonoBehaviour
 {
-
     public Collider grenadeCollider;
     void Start()
     {
@@ -14,7 +13,6 @@ public class Grenade : MonoBehaviour
     {
         if(other.tag == "InfectedSheep")
         {
-
             Sniper_Script.isInfectedSheep = false;
             Sniper_Script.isHealthySheep = true;
             Debug.Log("sheep cleansed");
@@ -25,7 +23,7 @@ public class Grenade : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         grenadeCollider.enabled = true;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(5f);
         Destroy(gameObject);
     }
 }

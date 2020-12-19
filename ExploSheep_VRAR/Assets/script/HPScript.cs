@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class HPScript : MonoBehaviour
 {
     public int HP = 3;
-    public int currenHp;
     public GameObject[] HPImage = new GameObject[3];
     // Start is called before the first frame update
     void Start()
@@ -20,7 +19,6 @@ public class HPScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currenHp = HP + 1;
         if(HP == 0)
         {
             Debug.Log("Game Over");
@@ -30,6 +28,6 @@ public class HPScript : MonoBehaviour
     public void DeductHP()
     {
         HP --;       
-        HPImage[currenHp].SetActive(false);
+        HPImage[HP].SetActive(false);
     }
 }

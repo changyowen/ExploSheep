@@ -33,7 +33,7 @@ public class Sheep : MonoBehaviour
 
     void HealthySheepDie()
     {
-        Debug.Log("Player Lives: " + Player_Info.playerHealth);
+        //Debug.Log("Player Lives: " + Player_Info.playerHealth);
         Destroy(gameObject);
         Sniper_Script.isInfectedSheep = false;
         Sniper_Script.isHealthySheep = false;

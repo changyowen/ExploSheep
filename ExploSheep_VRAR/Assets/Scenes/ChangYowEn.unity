@@ -8658,7 +8658,7 @@ MonoBehaviour:
   range: 100
   fpsCam: {fileID: 1142396531}
   script: {fileID: 2014324660}
-  maxChance: 3
+  maxChance: 1
   sniperFire: {fileID: 1791948316}
   sniperMuzzleFlash: {fileID: 1919156961}
 --- !u!1001 &543604007
@@ -41941,7 +41941,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2003965116}
-  - component: {fileID: 2003965115}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -41949,18 +41948,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2003965115
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2003965114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4df75164981557418984e0072f3ec56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &2003965116
 Transform:
   m_ObjectHideFlags: 0
@@ -42120,7 +42107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
-  currenHp: 0
   HPImage:
   - {fileID: 74010795}
   - {fileID: 1209864149}

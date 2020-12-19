@@ -50,10 +50,15 @@ public class Sniper_Script : MonoBehaviour
 
             if (hits.collider.tag == "InfectedSheep")
             {
+                sniperTimer += Time.deltaTime;
+                if (sniperTimer >= 2)
+                {
+                    TwoSecondsCoroutine();
+                    sniperTimer = 0;
+                }
                 Debug.Log("isInfectedSheep");
                 isInfectedSheep = true;
-                isHealthySheep = false;
-                TwoSecondsCoroutine();       
+                isHealthySheep = false;      
             }
             else
             if (hits.collider.tag == "Sheep")
