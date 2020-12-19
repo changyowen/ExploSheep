@@ -10,7 +10,11 @@ public class Sniper_Script : MonoBehaviour
 
     public Camera fpsCam;
 
+    float sniperTimer = 0;
+
     Sheep sheep;
+
+    public HPScript script;
 
     RaycastHit hits;
     public int maxChance;
@@ -49,22 +53,26 @@ public class Sniper_Script : MonoBehaviour
                 Debug.Log("isInfectedSheep");
                 isInfectedSheep = true;
                 isHealthySheep = false;
-                StartCoroutine(TwoSecondsCoroutine());       
+                TwoSecondsCoroutine();       
             }
             else
             if (hits.collider.tag == "Sheep")
             {
+                sniperTimer += Time.deltaTime;
+                if (sniperTimer >= 2)
+                {
+                    TwoSecondsCoroutine();
+                    sniperTimer = 0;
+                }
                 //Debug.Log("isSheep");
                 isHealthySheep = true;
-                isInfectedSheep = false;
-                StartCoroutine(TwoSecondsCoroutine());
+                isInfectedSheep = false;               
             }
             else
             {
                 //Debug.Log("not Sheep");
                 isInfectedSheep = false;
                 isHealthySheep = false;
-                StopCoroutine(TwoSecondsCoroutine());
             }
         }
         else
@@ -72,14 +80,12 @@ public class Sniper_Script : MonoBehaviour
             //Debug.Log("not Sheep");
             isInfectedSheep = false;
             isHealthySheep = false;
-            StopCoroutine(TwoSecondsCoroutine());
         }
 
     }
 
-    IEnumerator TwoSecondsCoroutine()
+    public void TwoSecondsCoroutine()
     {
-        yield return new WaitForSeconds(2);
         if (isInfectedSheep && !isHealthySheep /*&& CameraRaycast.loader.fillAmount == 1*/)
         {
             Debug.Log("Infected Sheep :(");
@@ -91,6 +97,8 @@ public class Sniper_Script : MonoBehaviour
         
         if (isHealthySheep && !isInfectedSheep /*&& CameraRaycast.loader.fillAmount == 1*/)
         {
+            Debug.Log("bla");
+            script.DeductHP();
             Debug.Log("Healthy Sheep :)");
             sniperFire.Play();
             sniperMuzzleFlash.Play();

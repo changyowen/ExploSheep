@@ -8657,6 +8657,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fpsCam: {fileID: 1142396531}
+  script: {fileID: 2014324660}
   maxChance: 3
   sniperFire: {fileID: 1791948316}
   sniperMuzzleFlash: {fileID: 1919156961}
@@ -42119,6 +42120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 3
+  currenHp: 0
   HPImage:
   - {fileID: 74010795}
   - {fileID: 1209864149}
