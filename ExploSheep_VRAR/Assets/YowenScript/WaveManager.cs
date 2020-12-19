@@ -22,6 +22,7 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hPScript = GameObject.Find("HP").GetComponent<HPScript>();
         countDown = GameObject.Find("321").GetComponent<AudioSource>();
         start = GameObject.Find("Start").GetComponent<AudioSource>();
         StartCoroutine(StartGame());

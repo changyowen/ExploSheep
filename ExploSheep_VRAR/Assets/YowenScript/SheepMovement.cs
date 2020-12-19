@@ -7,8 +7,6 @@ public class SheepMovement : MonoBehaviour
     public ScoreHandler script;
     public HPScript loseHealth;
     //access
-    public GameObject healthManager;
-    public GameObject score;
     public GameObject player_gameObj;
     public Transform player_transform;
     public Transform groundCheck;

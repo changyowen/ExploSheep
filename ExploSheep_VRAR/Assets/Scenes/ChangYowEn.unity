@@ -13792,6 +13792,7 @@ MonoBehaviour:
   - {fileID: -3383977726280241864, guid: c1604e7ad37c2f44f9c22cbf4b187ede, type: 3}
   opening_UI: {fileID: 295816887}
   gameOverPanel: {fileID: 1812536737}
+  hPScript: {fileID: 0}
   countDown: {fileID: 0}
   start: {fileID: 0}
 --- !u!4 &813512260
@@ -34289,7 +34290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1812536738
 RectTransform:
   m_ObjectHideFlags: 0
