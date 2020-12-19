@@ -8,10 +8,13 @@ public class CameraRaycast : MonoBehaviour
     Camera cam;
     public Image loadingCircle;
 
+    public static Image loader;
+
     // Start is called before the first frame update
     void Start()
     {
         cam = GetComponent<Camera>();
+        loader = loadingCircle;
     }
 
     // Update is called once per frame
@@ -21,14 +24,12 @@ public class CameraRaycast : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit))
         {
-            if(hit.transform.tag == "Teleport" || hit.transform.tag == "WeirdMenu")
+            if(hit.transform.tag == "Teleport" || hit.transform.tag == "WeirdMenu" || hit.transform.tag == "InfectedSheep" || hit.transform.tag == "Sheep")
             {
-                loadingCircle.fillAmount += Time.deltaTime / 1f;
-                if(loadingCircle.fillAmount >= 1)
-                {
-                    loadingCircle.fillAmount = 0;
-                }
+                loadingCircle.fillAmount += Time.deltaTime / 2f;
             }
+            else
+                loadingCircle.fillAmount = 0;
         }
         else
         {

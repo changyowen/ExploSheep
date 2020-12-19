@@ -8,6 +8,8 @@ TagManager:
   - WeirdMenu
   - Create
   - Destroy
+  - Sheep
+  - InfectedSheep
   layers:
   - Default
   - TransparentFX
