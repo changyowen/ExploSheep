@@ -102,6 +102,7 @@ public class WaveManager : MonoBehaviour
     void StartWave()
     {
         startGame = true;
+        Timer = 60f;
         for (int i = 0; i < UI_accessible.Length; i++)
         {
             UI_accessible[i].SetActive(true);

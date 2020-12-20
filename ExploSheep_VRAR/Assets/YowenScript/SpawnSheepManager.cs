@@ -58,7 +58,7 @@ public class SpawnSheepManager : MonoBehaviour
 
     void SpawnSheep()
     {
-        float randomSpawnAngle = ((Random.Range(spawnableAngle.x, spawnableAngle.y))-90) * 3.14f / 180;
+        float randomSpawnAngle = ((Random.Range(spawnableAngle.x, spawnableAngle.y))) * 3.14f / 180;
         float spawnPointX = (radius * Mathf.Cos(randomSpawnAngle)) + spawnCenter.position.x;
         float spawnPointZ = (radius * Mathf.Sin(randomSpawnAngle)) + spawnCenter.position.z;
         if(invertSpawnArea == true)

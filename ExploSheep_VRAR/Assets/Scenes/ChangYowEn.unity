@@ -13920,6 +13920,7 @@ MonoBehaviour:
   opening_UI: {fileID: 295816887}
   gameOverPanel: {fileID: 1812536737}
   hPScript: {fileID: 0}
+  startGame: 0
   countDown: {fileID: 0}
   start: {fileID: 0}
 --- !u!4 &813512260
@@ -34506,11 +34507,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sheep_gameObj: {fileID: 1403784584268037302, guid: 74925595b7cb41043857b65e5cb5b201,
     type: 3}
-  spawnableAngle: {x: 40, y: 70}
-  spawnCenter: {fileID: 1403784584268037301, guid: 74925595b7cb41043857b65e5cb5b201,
-    type: 3}
+  spawnableAngle: {x: 0, y: 30}
+  spawnCenter: {fileID: 2003965116}
   radius: 25
-  spawnCooldown: 6
+  spawnCooldown: 3.5
   StartSpawning: 0
 --- !u!4 &1806981933
 Transform:
@@ -34520,7 +34520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806981931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.19112, y: 0.75, z: 50.603245}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42948,15 +42948,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2003965114}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 47, y: 2.313, z: 31}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 98.5, y: 2.313, z: 45.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1142396530}
   - {fileID: 1784164393}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &2004581017 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4661435515762813124, guid: e289bf5debb17f6459818c207d781953,
