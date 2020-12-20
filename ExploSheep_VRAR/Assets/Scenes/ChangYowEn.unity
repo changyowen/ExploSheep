@@ -9242,7 +9242,7 @@ MonoBehaviour:
   range: 100
   fpsCam: {fileID: 1142396531}
   script: {fileID: 2014324660}
-  maxChance: 1
+  maxChance: 3
   sniperFire: {fileID: 1791948316}
   sniperMuzzleFlash: {fileID: 1919156961}
 --- !u!1001 &543604007
