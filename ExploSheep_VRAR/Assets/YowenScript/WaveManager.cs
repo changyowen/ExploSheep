@@ -29,7 +29,7 @@ public class WaveManager : MonoBehaviour
 
     private float Timer = 60f;
     public bool startGame = false;
-    private int waveCount = 0;
+    public int waveCount = 0;
 
     public AudioSource countDown;
     public AudioSource start;
