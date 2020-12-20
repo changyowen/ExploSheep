@@ -58,6 +58,7 @@ public class WaveManager : MonoBehaviour
                 if (GameObject.Find("Sheep") == null)
                 {
                     StartWave();
+                    Debug.Log("YESS");
                     waveCount++;
                 }
             }
@@ -89,7 +90,7 @@ public class WaveManager : MonoBehaviour
         }
         else
         {
-            Timer = 0;
+            GazeTimer = 0;
         }
     }
 
