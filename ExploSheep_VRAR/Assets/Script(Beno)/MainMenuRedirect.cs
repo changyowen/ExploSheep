@@ -14,16 +14,14 @@ public class MainMenuRedirect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (vrgaze.isStartButton)
+        {
+            SceneManager.LoadScene(1);
+        }
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void ExitGame()
-    {
-        Application.Quit();
+        if (vrgaze.isQuitButton)
+        {
+            Application.Quit();
+        }
     }
 }
