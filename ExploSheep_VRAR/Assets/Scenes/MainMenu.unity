@@ -620,7 +620,6 @@ GameObject:
   - component: {fileID: 526815612}
   - component: {fileID: 526815611}
   - component: {fileID: 526815610}
-  - component: {fileID: 526815609}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -628,23 +627,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &526815609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 526815608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!114 &526815610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,6 +749,8 @@ GameObject:
   - component: {fileID: 734050584}
   - component: {fileID: 734050583}
   - component: {fileID: 734050587}
+  - component: {fileID: 734050588}
+  - component: {fileID: 734050589}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: StartGame
@@ -820,7 +804,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
     callback:
@@ -848,8 +832,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 40, y: 15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 40, y: 11.390478, z: 1.6158025}
+  m_Center: {x: 0, y: 1.8047607, z: 0.04014218}
 --- !u!114 &734050585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -899,6 +883,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1988c3f44cda9e444bb5b2c89fa6133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &734050588
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734050581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 39.73491, y: 13.238992, z: 1}
+  m_Center: {x: -0.65492034, y: 0.8270687, z: 0}
+--- !u!114 &734050589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734050581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 734050585}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &832243613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1667,6 +1707,7 @@ GameObject:
   - component: {fileID: 1421725879}
   - component: {fileID: 1421725878}
   - component: {fileID: 1421725882}
+  - component: {fileID: 1421725883}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: ExitGame
@@ -1720,7 +1761,7 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
   - eventID: 1
     callback:
@@ -1748,8 +1789,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 40, y: 15, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 40, y: 11.366901, z: 1.9469743}
+  m_Center: {x: 0, y: -1.8165493, z: 0.30703092}
 --- !u!114 &1421725880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1799,6 +1840,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1988c3f44cda9e444bb5b2c89fa6133f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1421725883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421725876}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 40.158813, y: 13.319749, z: 1}
+  m_Center: {x: 0.12710571, y: -0.6880516, z: 0}
 --- !u!1 &1454051185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 555767533, guid: 34c21f523e72f45509a4e37ed0293c3b,
@@ -1839,12 +1893,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1454669245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Script: {fileID: 11500000, guid: 739800cd36aba44e9b04ce977e5784bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
+  ignoreReversedGraphics: 1
+  blockingObjects: 2
+  blockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
 --- !u!114 &1454669247
@@ -2000,7 +2054,7 @@ MonoBehaviour:
   imgGaze: {fileID: 999107842}
   totalTime: 1
   RayDistance: 30
-  trigger: {fileID: 0}
+  trigger: {fileID: 734050583}
 --- !u!1001 &1847690932
 PrefabInstance:
   m_ObjectHideFlags: 0
