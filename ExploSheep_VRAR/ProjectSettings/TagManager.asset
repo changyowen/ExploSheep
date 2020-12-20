@@ -11,6 +11,8 @@ TagManager:
   - sheep
   - StartGame
   - ExitGame
+  - Sheep
+  - InfectedSheep
   layers:
   - Default
   - TransparentFX

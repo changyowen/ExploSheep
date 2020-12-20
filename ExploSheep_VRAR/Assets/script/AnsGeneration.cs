@@ -14,8 +14,17 @@ public class AnsGeneration : MonoBehaviour
     void Start()
     {
         answer = QuestionGenerator.instance.result;
-        System.Random rand = new System.Random();
-        finalAns = answer + rand.Next(-2,0);
+
+        int randomCorrect = UnityEngine.Random.Range(0, 2);
+
+        if(randomCorrect == 0)
+        {
+            finalAns = answer + UnityEngine.Random.Range(-4, 5);
+        }
+        else
+        {
+            finalAns = answer;
+        }
         ansText.text = finalAns.ToString();
     }
 
