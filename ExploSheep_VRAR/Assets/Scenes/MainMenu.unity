@@ -766,6 +766,7 @@ GameObject:
   - component: {fileID: 734050585}
   - component: {fileID: 734050584}
   - component: {fileID: 734050583}
+  - component: {fileID: 734050587}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: StartGame
@@ -810,7 +811,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1792049586}
           m_MethodName: GVROn
           m_Mode: 1
           m_Arguments:
@@ -825,7 +826,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1792049586}
           m_MethodName: GVROff
           m_Mode: 1
           m_Arguments:
@@ -886,6 +887,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734050581}
   m_CullTransparentMesh: 0
+--- !u!114 &734050587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734050581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1988c3f44cda9e444bb5b2c89fa6133f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &832243613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1666,7 @@ GameObject:
   - component: {fileID: 1421725880}
   - component: {fileID: 1421725879}
   - component: {fileID: 1421725878}
+  - component: {fileID: 1421725882}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: ExitGame
@@ -1697,7 +1711,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1792049586}
           m_MethodName: GVROn
           m_Mode: 1
           m_Arguments:
@@ -1712,7 +1726,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 1792049586}
           m_MethodName: GVROff
           m_Mode: 1
           m_Arguments:
@@ -1773,6 +1787,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421725876}
   m_CullTransparentMesh: 0
+--- !u!114 &1421725882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421725876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1988c3f44cda9e444bb5b2c89fa6133f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1454051185 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 555767533, guid: 34c21f523e72f45509a4e37ed0293c3b,
