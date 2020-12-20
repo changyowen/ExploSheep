@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class WaveManager : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class WaveManager : MonoBehaviour
 
     public AudioSource countDown;
     public AudioSource start;
+
+    private bool triggered = false;
+    private float GazeTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -71,6 +75,22 @@ public class WaveManager : MonoBehaviour
             startGame = false;
             EndGame();
         }
+
+        //gaze
+        if (triggered == true)
+        {
+            GazeTimer += Time.deltaTime;
+            if (GazeTimer > 1f)
+            {
+                GazeTimer = 0;
+                triggered = false;
+                ReturntoMainMenu();
+            }
+        }
+        else
+        {
+            Timer = 0;
+        }
     }
 
     IEnumerator StartGame()
@@ -109,5 +129,20 @@ public class WaveManager : MonoBehaviour
         }
         QuestionGenerator.instance.StartQuestionGen();
         SpawnSheepManager.instance.StartSpawning = true;
+    }
+
+    public void ReturntoMainMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
+
+    public void Triggered()
+    {
+        triggered = true;
+    }
+
+    public void Nontriggered()
+    {
+        triggered = false;
     }
 }
