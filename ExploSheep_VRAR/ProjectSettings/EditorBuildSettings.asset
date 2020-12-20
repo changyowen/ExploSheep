@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
-    guid: e7739382c2e2dcd44912f9da0dd7dca8
+    path: Assets/Scenes/MainMenu.unity
+    guid: 426cfd3a2e2e4204b90161cff61f1f64
   - enabled: 1
     path: Assets/Scenes/ChangYowEn.unity
     guid: cd00c01fffc36e344b33d83c3dd240ca
+  - enabled: 1
+    path: Assets/GoogleVR/Demos/Scenes/HelloVR.unity
+    guid: bb36d2905dc634f1c9eecb35beecaca8
   m_configObjects: {}
