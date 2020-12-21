@@ -23,7 +23,7 @@ public class WaveManager : MonoBehaviour
     //access
     public GameObject[] UI_accessible;
     public Sprite[] opening_sprites;
-    public Image opening_UI;
+    public GameObject OpeningCountDown;
     public GameObject gameOverPanel;
     public HPScript hPScript;
 
@@ -96,19 +96,20 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
-        opening_UI.transform.gameObject.SetActive(false);
+        SpriteRenderer openingSR = OpeningCountDown.GetComponent<SpriteRenderer>();
+        OpeningCountDown.SetActive(false);
         yield return new WaitForSeconds(1f);
-        opening_UI.transform.gameObject.SetActive(true);
-        opening_UI.sprite = opening_sprites[2];
+        OpeningCountDown.SetActive(true);
+        openingSR.sprite = opening_sprites[2];
         countDown.Play();
         yield return new WaitForSeconds(1f);
-        opening_UI.sprite = opening_sprites[1];
+        openingSR.sprite = opening_sprites[1];
         countDown.Play();
         yield return new WaitForSeconds(1f);
-        opening_UI.sprite = opening_sprites[0];
+        openingSR.sprite = opening_sprites[0];
         countDown.Play();
         yield return new WaitForSeconds(1f);
-        opening_UI.transform.gameObject.SetActive(false);
+        OpeningCountDown.SetActive(false);
         start.Play();
         StartWave();
     }
