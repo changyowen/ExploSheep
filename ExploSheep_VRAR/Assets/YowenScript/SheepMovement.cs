@@ -40,16 +40,19 @@ public class SheepMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(reachTarget == false && WaveManager.instance.startGame == true)
+        if (WaveManager.instance != null)
         {
-            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-            if (isGrounded && velocity.y < 0)
+            if (reachTarget == false && WaveManager.instance.startGame == true)
             {
-                velocity.y = -2f;
+                isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+                if (isGrounded && velocity.y < 0)
+                {
+                    velocity.y = -2f;
+                }
+                velocity.y += gravity * Time.deltaTime;
+                GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
+                FollowTargetWithRotation(player_transform, distanceToStop, speed);
             }
-            velocity.y += gravity * Time.deltaTime;
-            GetComponent<CharacterController>().Move(velocity * Time.deltaTime);
-            FollowTargetWithRotation(player_transform, distanceToStop, speed);
         }
     }
 

@@ -16,11 +16,13 @@ public class MainMenuRedirect : MonoBehaviour
     {
         if (vrgaze.isStartButton)
         {
+            vrgaze.isStartButton = false;
             SceneManager.LoadScene(1);
         }
 
         if (vrgaze.isQuitButton)
         {
+            vrgaze.isQuitButton = false;
             Application.Quit();
         }
     }
