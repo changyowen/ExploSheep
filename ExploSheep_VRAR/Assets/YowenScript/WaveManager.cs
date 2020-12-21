@@ -36,6 +36,7 @@ public class WaveManager : MonoBehaviour
 
     private bool triggered = false;
     private float GazeTimer;
+    private bool stillStartingGame = true;
 
     // Start is called before the first frame update
     void Start()
@@ -57,23 +58,24 @@ public class WaveManager : MonoBehaviour
                 SpawnSheepManager.instance.StartSpawning = false;
                 if (GameObject.Find("Sheep") == null)
                 {
-                    StartWave();
-                    Debug.Log("YESS");
                     waveCount++;
+                    startGame = false;
+                    //StartWave();
                 }
             }
         }
         else
         {
-            for(int i = 0; i < UI_accessible.Length; i++)
+            if(stillStartingGame == false)
             {
-                UI_accessible[i].SetActive(false);
+                StartCoroutine(StartGame());
             }
         }
 
         if(waveCount >= 3 || hPScript.HP <= 0)
         {
             startGame = false;
+            stillStartingGame = true;
             EndGame();
         }
 
@@ -96,6 +98,11 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator StartGame()
     {
+        stillStartingGame = true;
+        for (int i = 0; i < UI_accessible.Length; i++)
+        {
+            UI_accessible[i].SetActive(false);
+        }
         SpriteRenderer openingSR = OpeningCountDown.GetComponent<SpriteRenderer>();
         OpeningCountDown.SetActive(false);
         yield return new WaitForSeconds(1f);
@@ -111,6 +118,7 @@ public class WaveManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         OpeningCountDown.SetActive(false);
         start.Play();
+        stillStartingGame = false;
         StartWave();
     }
 
@@ -119,6 +127,10 @@ public class WaveManager : MonoBehaviour
         SpawnSheepManager.instance.StartSpawning = false;
         Animator anim = gameOverPanel.GetComponent<Animator>();
         anim.SetBool("Showing", true);
+        for (int i = 0; i < UI_accessible.Length; i++)
+        {
+            UI_accessible[i].SetActive(false);
+        }
     }
 
     void StartWave()
