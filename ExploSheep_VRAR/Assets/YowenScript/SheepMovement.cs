@@ -101,6 +101,7 @@ public class SheepMovement : MonoBehaviour
     {
         transform.GetChild(0).GetComponent<Animator>().SetTrigger("Idle");
         correctSound.Play();
+        transform.GetChild(4).gameObject.SetActive(true);
         float elapsedTime = 0;
         Vector3 destination = new Vector3(transform.position.x, transform.position.y + 6, transform.position.z);
         while (elapsedTime <= time)
