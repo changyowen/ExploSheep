@@ -60,7 +60,6 @@ public class WaveManager : MonoBehaviour
                 {
                     waveCount++;
                     startGame = false;
-                    //StartWave();
                 }
             }
         }
