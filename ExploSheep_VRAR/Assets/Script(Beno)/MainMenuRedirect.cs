@@ -17,7 +17,7 @@ public class MainMenuRedirect : MonoBehaviour
         if (vrgaze.isStartButton)
         {
             vrgaze.isStartButton = false;
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Narration");
         }
 
         if (vrgaze.isQuitButton)
